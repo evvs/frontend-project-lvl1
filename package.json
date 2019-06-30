@@ -1,0 +1,29 @@
+{
+  "name": "hexbraingames",
+  "version": "1.0.0",
+  "description": "hexlet course frontend. project braingames",
+  "main": "brain-games.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evvs/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "hexlet",
+    "brain-games"
+  ],
+  "author": "Evgeny V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evvs/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/evvs/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  }
+}
