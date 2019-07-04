@@ -78,4 +78,4 @@ Let's try again, ${userName}!`);
 
 calcGameLogic()
 
-export { gameEven, userName, greetings };
+export { gameEven, userName, greetings, calcGameLogic };
