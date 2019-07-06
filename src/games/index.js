@@ -33,8 +33,9 @@ const gameEven = (randomNumber = Math.floor(Math.random() * 100), acc = 0) => {
 
 // next game calcGame
 // конструктор пары
-const construct = (a = Math.floor(Math.random() * 100), b = Math.floor(Math.random() * 100)) => (message) => {
-
+const construct = (a = Math.floor(Math.random() * 100),
+  // eslint-disable-next-line consistent-return
+  b = Math.floor(Math.random() * 100)) => (message) => {
   switch (message) { // ждем message из селектора и возвращаем аргумент
     case 'firstElement':
       return a;
@@ -52,23 +53,26 @@ const pickRandomOperator = () => {
 };
 // селекторы пары
 const selectFirstElement = pair => pair('firstElement'); // первый элемент пары
-const selectSecondElement = pair => pair('secondElement'); // второй элемент пары 
+const selectSecondElement = pair => pair('secondElement'); // второй элемент пары
 
-const calcGameLogic = (randomNumber1 = selectFirstElement(construct()), 
-  randomNumber2 = selectSecondElement(construct()), 
+// логика игры
+const calcGameLogic = (randomNumber1 = selectFirstElement(construct()),
+  randomNumber2 = selectSecondElement(construct()),
   operator = pickRandomOperator(), acc = 0) => {
-
   if (acc === 3) {
     console.log(`Congratulations, ${userName}`);
     return;
   }
+  // eslint-disable-next-line no-eval
   const result = eval(randomNumber1 + operator + randomNumber2);
   console.log(`Question: ${randomNumber1} ${operator} ${randomNumber2}`);
   const userInput = Number(readlineSync.question('Your answer: '));
 
   if (result === userInput) {
     console.log('Correct!');
-    calcGameLogic(randomNumber1 = selectFirstElement(construct()), 
+    // eslint-disable-next-line no-param-reassign
+    calcGameLogic(randomNumber1 = selectFirstElement(construct()),
+      // eslint-disable-next-line no-param-reassign
       randomNumber2 = selectSecondElement(construct()), operator = pickRandomOperator(), acc + 1);
   } else {
     console.log(`${userInput} is wrong answer ;(. Correct answer was ${result}.
@@ -76,6 +80,6 @@ Let's try again, ${userName}!`);
   }
 };
 
-calcGameLogic()
-
-export { gameEven, userName, greetings, calcGameLogic };
+export {
+  gameEven, userName, greetings, calcGameLogic,
+};
