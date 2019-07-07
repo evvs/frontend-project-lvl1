@@ -80,6 +80,31 @@ Let's try again, ${userName}!`);
   }
 };
 
+// next game gcdGame
+
+const gcd = (a, b) => (!b ? a : gcd(b, a % b)); // функция нахождения НОД
+
+const gcdGame = (randomNumber1 = selectFirstElement(construct()), // логика игры
+  randomNumber2 = selectSecondElement(construct()), acc = 0) => {
+  if (acc === 3) {
+    console.log(`Congratulations, ${userName}`);
+    return;
+  }
+  console.log(`Question: ${randomNumber1} ${randomNumber2}`);
+  const userInput = Number(readlineSync.question('Your answer: '));
+
+  if (gcd(randomNumber1, randomNumber2) === userInput) {
+    console.log('Correct!');
+    // eslint-disable-next-line no-param-reassign
+    gcdGame(randomNumber1 = selectFirstElement(construct()),
+    // eslint-disable-next-line no-param-reassign
+      randomNumber2 = selectSecondElement(construct()), acc + 1);
+  } else {
+    console.log(`${userInput} is wrong answer ;(. Correct answer was ${gcd(randomNumber1, randomNumber2)}.
+Let's try again, ${userName}!`);
+  }
+};
+
 export {
-  gameEven, userName, greetings, calcGameLogic,
+  gameEven, userName, greetings, calcGameLogic, gcdGame,
 };

@@ -2,6 +2,6 @@
 import { calcGameLogic } from '..';
 
 console.log(`Welcome to the Brain Games!
-Answer "yes" if number even otherwise answer "no".`);
+What is the result of the expression?.`);
 
 calcGameLogic();
