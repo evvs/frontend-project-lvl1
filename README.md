@@ -12,3 +12,7 @@
 **Brain-gcd**
 Суть игры в следующем: пользователю показывается два случайных числа, например, 25 50. Пользователь должен вычислить и ввести наибольший общий делитель этих чисел. 
 [![asciicast](https://asciinema.org/a/uIgWyTAOSG4lRaJyLLcgvXt5B.svg)](https://asciinema.org/a/uIgWyTAOSG4lRaJyLLcgvXt5B)
+
+**Brain-progression**
+Суть игры в следующем: показываем игроку ряд чисел, образующий арифметическую прогрессию, заменив любое из чисел двумя точками. Игрок должен определить это число.
+[![asciicast](https://asciinema.org/a/ji9WJwF3dsY8KO3TL6bAthv8h.svg)](https://asciinema.org/a/ji9WJwF3dsY8KO3TL6bAthv8h)

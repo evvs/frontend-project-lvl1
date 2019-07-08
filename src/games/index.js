@@ -105,6 +105,54 @@ Let's try again, ${userName}!`);
   }
 };
 
+// Progression game
+
+const progressionGame = (startOfProgression = Math.floor(Math.random() * 100),
+  operator = pickRandomOperator(), hideNumber = Math.floor(Math.random() * 7) + 1,
+  step = Math.floor(Math.random() * 10), acc = 0) => { /*
+startOfProgression - первое число в прогрессии (рандом)
+operator - оператор (+-* рандом)
+hideNumber - скрываемое число в прогрессии (рандом)
+step - шаг прогрессии
+acc - accumulator
+*/
+  if (acc === 3) {
+    console.log(`Congratulations, ${userName}`);
+    return;
+  }
+
+  let answer = 0;
+
+  const makeProgression = (currentNumber = startOfProgression, list = `${currentNumber}`, iter = 0) => {
+    // функция для создание прогрессии
+    if (iter === hideNumber) {
+      // eslint-disable-next-line
+      makeProgression(currentNumber = eval(currentNumber +operator+ step), list += ` ..`, iter + 1);
+      answer = currentNumber;
+    } else if (iter > 7) {
+      return list;
+    }
+    // eslint-disable-next-line
+    return makeProgression(currentNumber = eval(currentNumber +operator+ step), list += ` ${currentNumber}`, iter + 1)
+  };
+
+  console.log(`Question: ${makeProgression()}`);
+  const userInput = Number(readlineSync.question('Your answer: '));
+
+  if (userInput === answer) {
+    console.log('Correct!');
+    // eslint-disable-next-line no-param-reassign
+    progressionGame(startOfProgression = Math.floor(Math.random() * 100),
+    // eslint-disable-next-line no-param-reassign
+      operator = pickRandomOperator(), hideNumber = Math.floor(Math.random() * 7) + 1,
+      // eslint-disable-next-line no-param-reassign
+      step = Math.floor(Math.random() * 10), acc + 1);
+  } else {
+    console.log(`${userInput} is wrong answer ;(. Correct answer was ${answer}.
+Let's try again, ${userName}!`);
+  }
+};
+
 export {
-  gameEven, userName, greetings, calcGameLogic, gcdGame,
+  gameEven, userName, greetings, calcGameLogic, gcdGame, progressionGame,
 };
