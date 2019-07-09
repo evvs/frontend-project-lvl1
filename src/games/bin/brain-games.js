@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import { userName } from '..';
+import { askName } from '..';
 
 console.log('Welcome to the Brain Games!');
 
-// eslint-disable-next-line no-unused-expressions
-userName;
+askName();

@@ -1,6 +1,6 @@
 {
   "name": "evvshexbraingames",
-  "version": "1.5.0",
+  "version": "2.0.2",
   "description": "hexlet course frontend. project braingames",
   "main": "brain-games.js",
   "bin": {
@@ -8,7 +8,8 @@
     "brain-even": "dist/games/bin/brain-even.js",
     "brain-calc": "dist/games/bin/brain-calc.js",
     "brain-gcd": "dist/games/bin/brain-gcd.js",
-    "brain-progression": "dist/games/bin/brain-progression.js"
+    "brain-progression": "dist/games/bin/brain-progression.js",
+    "brain-prime": "dist/games/bin/brain-prime.js"
   },
   "files": [
     "dist"
