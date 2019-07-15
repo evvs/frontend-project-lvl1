@@ -1,20 +1,5 @@
 import readlineSync from 'readline-sync';
-// будем использовать пары для сохранения информации(вопрос, ответ)
-export const cons = (a, b) => (message) => {
-  switch (message) {
-    case 'firstElement':
-      return a;
-    case 'secondElement':
-      return b;
-    default:
-  }
-  return '';
-};
-
-
-// селекторы пары
-const car = pair => pair('firstElement'); // забрать первый элемент пары(вопрос)
-const cdr = pair => pair('secondElement'); // забрать второй элемент пары(ответ)
+import { car, cdr } from '@hexlet/pairs';
 
 export const randomNumber = (max = 100, optional = null) => (optional === null
   ? Math.floor(Math.random() * max)

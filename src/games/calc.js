@@ -1,5 +1,6 @@
+import { cons } from '@hexlet/pairs';
 import {
-  gameEngine, randomNumber, randomOperator, cons,
+  gameEngine, randomNumber, randomOperator,
 } from '..';
 
 const instruction = 'What is the result of the expression?';

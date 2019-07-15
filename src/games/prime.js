@@ -1,4 +1,5 @@
-import { gameEngine, randomNumber, cons } from '..';
+import { cons } from '@hexlet/pairs';
+import { gameEngine, randomNumber } from '..';
 
 const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 

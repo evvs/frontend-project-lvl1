@@ -1,5 +1,6 @@
+import { cons } from '@hexlet/pairs';
 import {
-  gameEngine, randomNumber, cons, randomOperator,
+  gameEngine, randomNumber, randomOperator,
 } from '..';
 
 const instruction = 'What number is missing in the progression?';
