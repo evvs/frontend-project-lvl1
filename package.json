@@ -1,6 +1,6 @@
 {
   "name": "evvshexbraingames",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "hexlet course frontend. project braingames",
   "main": "brain-games.js",
   "bin": {
@@ -34,13 +34,13 @@
   },
   "homepage": "https://github.com/evvs/frontend-project-lvl1#readme",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/node": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.18.0"
   },
