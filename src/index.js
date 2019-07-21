@@ -16,14 +16,14 @@ export default (task, instruction) => { // движок игры
     const question = car(saveCurrentTask);
     const answer = cdr(saveCurrentTask);
 
-    console.log(`Question: ${question}`); // вопрос пользователю
-    const userInput = readlineSync.question('Your answer: ').toLowerCase(); // ответ пользователя
+    console.log(`Question: ${question}`);
+    const userInput = readlineSync.question('Your answer: ').toLowerCase();
 
-    if (userInput !== answer) { // если ответ пользователя неверный
+    if (userInput !== answer) {
       console.log(`"${userInput}" is wrong answer ;(. Correct answer was "${answer}"`);
       return console.log(`Let's try again, ${username}!`);
     }
-    console.log('Correct!'); // если ответ пользователя верный
+    console.log('Correct!');
     return runGame(correctAnswers + 1);
   };
   return runGame();
