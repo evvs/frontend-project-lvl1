@@ -12,9 +12,9 @@ export default (task, instruction) => { // движок игры
     if (correctAnswers === 3) {
       return console.log(`Congratulations, ${username}`);
     }
-    const saveСurrentTask = task();
-    const question = car(saveСurrentTask);
-    const answer = cdr(saveСurrentTask);
+    const saveCurrentTask = task();
+    const question = car(saveCurrentTask);
+    const answer = cdr(saveCurrentTask);
 
     console.log(`Question: ${question}`); // вопрос пользователю
     const userInput = readlineSync.question('Your answer: ').toLowerCase(); // ответ пользователя
