@@ -1,34 +1,30 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-export const randomNumber = (max = 100, optional = null) => (optional === null
-  ? Math.floor(Math.random() * max)
-  : Math.floor(Math.random() * max) + optional); // рандомное число по дефолту от 1 до 99
-
-export const gameEngine = (gameLogic, instruction) => { // движок игры
+export default (task, instruction) => { // движок игры
   console.log(`Welcome to the Brain Games!\n${instruction}`);
 
   const username = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${username}!`);
 
-  const iter = (acc = 0) => {
-    if (acc === 3) { // остановить рекурсию, когда юзер дал 3 верных ответа
+  const runGame = (correctAnswers = 0) => {
+    if (correctAnswers === 3) {
       return console.log(`Congratulations, ${username}`);
     }
-    const pair = gameLogic();
-    const question = car(pair);
-    const answer = cdr(pair);
+    const saveСurrentTask = task();
+    const question = car(saveСurrentTask);
+    const answer = cdr(saveСurrentTask);
 
     console.log(`Question: ${question}`); // вопрос пользователю
     const userInput = readlineSync.question('Your answer: ').toLowerCase(); // ответ пользователя
 
     if (userInput !== answer) { // если ответ пользователя неверный
-      return console.log(`"${userInput}" is wrong answer ;(. Correct answer was "${answer}"
-Let's try again, ${username}!`);
+      console.log(`"${userInput}" is wrong answer ;(. Correct answer was "${answer}"`);
+      return console.log(`Let's try again, ${username}!`);
     }
     console.log('Correct!'); // если ответ пользователя верный
-    return iter(acc + 1);
+    return runGame(correctAnswers + 1);
   };
-  return iter();
+  return runGame();
 };

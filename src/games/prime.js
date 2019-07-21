@@ -1,18 +1,28 @@
 import { cons } from '@hexlet/pairs';
-import { gameEngine, randomNumber } from '..';
+import gameEngine from '..';
+import randomNumber from '../utils';
 
 const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (number, divisor = 2) => { // функция для проверки простое число или составное
-  if (divisor === number) {
-    return 'yes'; // возвращает 'yes' если простое
-  }
-  if (number % divisor === 0) {
-    return 'no'; // возвращает 'no' если составное
-  }
-  return isPrime(number, divisor + 1);
+const isPrime = (number) => {
+  const iter = (divisor = 2) => {
+    if (divisor === number) {
+      return true;
+    }
+    if (number % divisor === 0) {
+      return false;
+    }
+    return iter(divisor + 1);
+  };
+  return iter();
 };
 
-const gamePrime = (num = randomNumber(100, 1)) => cons(num, isPrime(num));
 
-export default () => gameEngine(gamePrime, instruction);
+const createTask = () => {
+  const question = randomNumber();
+  const answer = isPrime(question) ? 'yes' : 'no';
+
+  return cons(question, answer);
+};
+
+export default () => gameEngine(createTask, instruction);
