@@ -16,7 +16,7 @@ const createTask = () => {
 
   for (let i = 2; i <= progressionLength; i += 1) {
     firstElement += commonDifference;
-    if (i === hidenElement) {
+    if (i === hiddenElement) {
       progressionAnswer = firstElement;
       sequence = `${sequence} ..`;
     } else {
