@@ -8,7 +8,7 @@ const instruction = 'What number is missing in the progression?';
 const createTask = () => {
   const progressionLength = 10;
   const commonDifference = randomNumber();
-  const hidenElement = randomNumber(1, progressionLength - 1);
+  const hiddenElement = randomNumber(1, progressionLength - 1);
 
   let firstElement = randomNumber();
   let sequence = `${firstElement}`;
