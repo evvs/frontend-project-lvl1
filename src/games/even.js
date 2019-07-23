@@ -4,11 +4,11 @@ import randomNumber from '../utils';
 
 const instruction = 'Answer "yes" if number even otherwise answer "no".';
 
-const isEven = number => number % 2;
+const isEven = number => number % 2 === 0;
 
 const createTask = () => {
   const question = randomNumber();
-  const answer = isEven(question) ? 'no' : 'yes';
+  const answer = isEven(question) ? 'yes' : 'no';
 
   return cons(question, answer);
 };
