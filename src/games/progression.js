@@ -1,29 +1,28 @@
 import { cons } from '@hexlet/pairs';
-import gameEngine from '..';
-import randomNumber from '../utils';
+import startGameEngine from '..';
+import getRandomNumber from '../utils';
 
 const instruction = 'What number is missing in the progression?';
 
+const progressionLength = 10;
 
-const createTask = () => {
-  const progressionLength = 10;
-  const commonDifference = randomNumber();
-  const hiddenElement = randomNumber(1, progressionLength - 1);
+const generateTask = () => {
+  const commonDifference = getRandomNumber(1, 15);
+  const hiddenElementIndex = getRandomNumber(1, progressionLength - 1);
+  const start = getRandomNumber(1, 100);
 
-  let firstElement = randomNumber();
-  let sequence = `${firstElement}`;
-  let progressionAnswer = 0;
+  let question = '';
+  let answer = null;
 
-  for (let i = 1; i < progressionLength; i += 1) {
-    firstElement += commonDifference;
-    if (i === hiddenElement) {
-      progressionAnswer = firstElement;
-      sequence = `${sequence} ..`;
+  for (let i = 0; i < progressionLength; i += 1) {
+    if (i === hiddenElementIndex) {
+      question += '.. ';
+      answer = start + (commonDifference * i);
     } else {
-      sequence = `${sequence} ${firstElement}`;
+      question += `${start + (commonDifference * i)} `;
     }
   }
-  return cons(sequence, progressionAnswer.toString());
+  return cons(question, answer.toString());
 };
 
-export default () => gameEngine(createTask, instruction);
+export default () => startGameEngine(generateTask, instruction);

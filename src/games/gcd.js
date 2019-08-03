@@ -1,14 +1,14 @@
 import { cons } from '@hexlet/pairs';
-import gameEngine from '..';
-import randomNumber from '../utils';
+import startGameEngine from '..';
+import getRandomNumber from '../utils';
 
 const instruction = 'Find the greatest common divisor of given numbers.';
 
 const findGcd = (a, b) => (!b ? a : findGcd(b, a % b));
 
-const createTask = () => {
-  const num1 = randomNumber();
-  const num2 = randomNumber();
+const generateTask = () => {
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
 
   const question = `${num1} ${num2}`;
   const answer = String(findGcd(num1, num2));
@@ -16,4 +16,4 @@ const createTask = () => {
   return cons(question, answer);
 };
 
-export default () => gameEngine(createTask, instruction);
+export default () => startGameEngine(generateTask, instruction);

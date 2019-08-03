@@ -1,8 +1,7 @@
 {
   "name": "evvshexbraingames",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "description": "hexlet course frontend. project braingames",
-  "main": "brain-games.js",
   "bin": {
     "brain-games": "dist/games/bin/brain-games.js",
     "brain-even": "dist/games/bin/brain-even.js",

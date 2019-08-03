@@ -1,12 +1,10 @@
 import { cons } from '@hexlet/pairs';
-import gameEngine from '..';
-import randomNumber from '../utils';
+import startGameEngine from '..';
+import getRandomNumber from '../utils';
 
 const instruction = 'What is the result of the expression?';
 
 const operators = '+-*';
-
-const chooseRandomOperator = () => operators[randomNumber(0, operators.length)];
 
 const calculate = (a, b, operator) => {
   switch (operator) {
@@ -21,10 +19,10 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const createTask = () => {
-  const num1 = randomNumber();
-  const num2 = randomNumber();
-  const operator = chooseRandomOperator();
+const generateTask = () => {
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
 
   const question = `${num1} ${operator} ${num2}`;
   const answer = String(calculate(num1, num2, operator));
@@ -32,4 +30,4 @@ const createTask = () => {
   return cons(question, answer);
 };
 
-export default () => gameEngine(createTask, instruction);
+export default () => startGameEngine(generateTask, instruction);
