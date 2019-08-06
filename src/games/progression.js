@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import startGameEngine from '..';
+import playGame from '..';
 import getRandomNumber from '../utils';
 
 const instruction = 'What number is missing in the progression?';
@@ -11,18 +11,17 @@ const generateTask = () => {
   const hiddenElementIndex = getRandomNumber(1, progressionLength - 1);
   const start = getRandomNumber(1, 100);
 
+  const answer = start + (commonDifference * hiddenElementIndex);
   let question = '';
-  let answer = null;
 
   for (let i = 0; i < progressionLength; i += 1) {
     if (i === hiddenElementIndex) {
-      question += '.. ';
-      answer = start + (commonDifference * i);
+      question = `${question}.. `;
     } else {
-      question += `${start + (commonDifference * i)} `;
+      question = `${question}${start + (commonDifference * i)} `;
     }
   }
   return cons(question, answer.toString());
 };
 
-export default () => startGameEngine(generateTask, instruction);
+export default () => playGame(generateTask, instruction);

@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import startGameEngine from '..';
+import playGame from '..';
 import getRandomNumber from '../utils';
 
 const instruction = 'Answer "yes" if number even otherwise answer "no".';
@@ -13,4 +13,4 @@ const generateTask = () => {
   return cons(question, answer);
 };
 
-export default () => startGameEngine(generateTask, instruction);
+export default () => playGame(generateTask, instruction);

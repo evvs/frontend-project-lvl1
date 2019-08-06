@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import startGameEngine from '..';
+import playGame from '..';
 import getRandomNumber from '../utils';
 
 const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -9,7 +9,7 @@ const isPrime = (number) => {
     return false;
   }
   const iter = (divisor = 2) => {
-    if (divisor === number) {
+    if (divisor > number / 2) {
       return true;
     }
     if (number % divisor === 0) {
@@ -27,4 +27,4 @@ const generateTask = () => {
   return cons(question, answer);
 };
 
-export default () => startGameEngine(generateTask, instruction);
+export default () => playGame(generateTask, instruction);

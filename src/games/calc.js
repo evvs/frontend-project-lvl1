@@ -1,5 +1,5 @@
 import { cons } from '@hexlet/pairs';
-import startGameEngine from '..';
+import playGame from '..';
 import getRandomNumber from '../utils';
 
 const instruction = 'What is the result of the expression?';
@@ -30,4 +30,4 @@ const generateTask = () => {
   return cons(question, answer);
 };
 
-export default () => startGameEngine(generateTask, instruction);
+export default () => playGame(generateTask, instruction);

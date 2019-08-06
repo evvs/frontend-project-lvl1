@@ -14,7 +14,7 @@ export default (generateTask, instruction) => {
   const runGame = (correctAnswersCount = 0) => {
     if (correctAnswersCount === roundsCount) {
       console.log(`Congratulations, ${username}`);
-      return false;
+      return;
     }
     const сurrentTask = generateTask();
     const question = car(сurrentTask);
@@ -26,10 +26,10 @@ export default (generateTask, instruction) => {
     if (userAnswer !== correctAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
       console.log(`Let's try again, ${username}!`);
-      return false;
+      return;
     }
     console.log('Correct!');
-    return runGame(correctAnswersCount + 1);
+    runGame(correctAnswersCount + 1);
   };
   return runGame();
 };
