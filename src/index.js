@@ -11,8 +11,8 @@ export default (generateTask, instruction) => {
 
   console.log(`Hello, ${username}!`);
 
-  const runGame = (correctAnswersCount = 0) => {
-    if (correctAnswersCount === roundsCount) {
+  const runRound = (counter) => {
+    if (counter === roundsCount) {
       console.log(`Congratulations, ${username}`);
       return;
     }
@@ -29,7 +29,7 @@ export default (generateTask, instruction) => {
       return;
     }
     console.log('Correct!');
-    runGame(correctAnswersCount + 1);
+    runRound(counter + 1);
   };
-  return runGame();
+  return runRound(0);
 };

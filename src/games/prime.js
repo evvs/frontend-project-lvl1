@@ -8,7 +8,7 @@ const isPrime = (number) => {
   if (number <= 1) {
     return false;
   }
-  const iter = (divisor = 2) => {
+  const iter = (divisor) => {
     if (divisor > number / 2) {
       return true;
     }
@@ -17,7 +17,7 @@ const isPrime = (number) => {
     }
     return iter(divisor + 1);
   };
-  return iter();
+  return iter(2);
 };
 
 const generateTask = () => {
