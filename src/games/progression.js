@@ -8,14 +8,14 @@ const progressionLength = 10;
 
 const generateTask = () => {
   const diff = getRandomNumber(1, 15);
-  const answerIndex = getRandomNumber(1, progressionLength - 1);
+  const hiddenElementIndex = getRandomNumber(1, progressionLength - 1);
   const init = getRandomNumber(1, 100);
 
-  const answer = init + (diff * answerIndex);
+  const answer = init + (diff * hiddenElementIndex);
   let question = '';
 
   for (let i = 0; i < progressionLength; i += 1) {
-    if (i === answerIndex) {
+    if (i === hiddenElementIndex) {
       question = `${question}.. `;
     } else {
       question = `${question}${init + (diff * i)} `;
