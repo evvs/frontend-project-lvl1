@@ -31,5 +31,5 @@ export default (generateTask, instruction) => {
     console.log('Correct!');
     runRound(counter + 1);
   };
-  return runRound(0);
+  runRound(0);
 };
